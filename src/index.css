@@ -1,6 +1,8 @@
 .todo-list {
     background-color: #dad7cd;
     width: 40rem;
+    margin-left: 12%;
+    margin-top: 10%;
 }
 
 .todo-heading {
