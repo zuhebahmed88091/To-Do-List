@@ -2,7 +2,7 @@
   background-color: #dad7cd;
   width: 40rem;
   margin-left: 12%;
-  margin-top: 10%;
+  box-shadow: 0 0 10px #000;
 }
 
 .todo-heading {
@@ -20,6 +20,10 @@
   display: flex;
   justify-content: space-around;
   background-color: #f8f9fa;
+  width: 40rem;
+  margin-left: 12%;
+  margin-top: 15%;
+  box-shadow: 0 0 10px #000;
 }
 
 .add-todo input {
@@ -33,24 +37,26 @@
 
 .add-todo i {
   padding-right: 8%;
-  padding-top: 3%;
+  padding-top: 4.5%;
+  padding-left: 20%;
 }
 
 .item {
-  display: flex;
   background-color: #f8f9fa;
   padding-left: 18%;
   margin-block-start: 1%;
   margin-block-end: 1%;
+  margin-left: 0%;
+  margin-right: 0%;
 }
 
 .internal-div {
   display: flex;
+  justify-content: space-between;
   padding-left: 2%;
 }
 
 .internal-div i {
-  padding-left: 20.5rem;
   padding-top: 3%;
 }
 
@@ -65,4 +71,9 @@
   cursor: pointer;
   width: 100%;
   font-size: 1.5rem;
+}
+
+.edit-input {
+  border: none;
+  background-color: #f8f9fa;
 }

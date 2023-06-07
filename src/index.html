@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To-do List</title>
-  <script src="https://kit.fontawesome.com/085161e9fd.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/085161e9fd.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
-  <main id="todo-list" class="todo-list">
-    <section id="todo-heading" class="todo-heading">
-      <h1>Today's To Do</h1>
-      <i class="fa-solid fa-arrows-rotate"></i>
-    </section>
+  <div class="to-wrap">
     <section id="add-todo" class="add-todo">
       <input type="text" id="input-todo" placeholder="Add to your list...">
-      <i class="fa-thin fa-arrow-turn-down-left"></i>
-    </section>
+      <i class="fa-solid fa-arrow-left"></i>
+  </section>
+
+  <main id="todo-list" class="todo-list">
+      <section id="todo-heading" class="todo-heading">
+        <h1>Today's To Do</h1>
+        <i class="fa-solid fa-arrows-rotate"></i>
+      </section>
   </main>
+  </div>
+ <script defer src="index.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
 </body>
 </html>
