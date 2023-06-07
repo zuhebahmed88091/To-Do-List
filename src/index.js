@@ -1,5 +1,6 @@
+/* eslint max-classes-per-file: "off" */
 import _ from 'lodash';
-import "./index.css";
+import './index.css';
 
 class Task {
   constructor(description, completed, index) {
@@ -12,7 +13,7 @@ class Task {
 const tasks = [
   new Task('Task 1', false, 1),
   new Task('Task 2', true, 2),
-  new Task('Task 3', false, 3)
+  new Task('Task 3', false, 3),
 ];
 
 class ToDoList {
@@ -23,7 +24,7 @@ class ToDoList {
   render() {
     const todoList = document.getElementById('todo-list');
 
-    this.tasks.forEach(task => {
+    this.tasks.forEach((task) => {
       const listItem = document.createElement('div');
       listItem.classList.add('item');
       const div = document.createElement('div');
@@ -39,7 +40,7 @@ class ToDoList {
       div.appendChild(itemDescription);
       listItem.appendChild(inputItem);
       listItem.appendChild(div);
-  
+
       const threeDots = document.createElement('i');
       threeDots.className = 'fa-solid fa-ellipsis-vertical';
       threeDots.classList.add('threedots');
@@ -58,4 +59,4 @@ class ToDoList {
 }
 
 const todoList = new ToDoList(tasks);
-todoList.render(); 
+todoList.render();
