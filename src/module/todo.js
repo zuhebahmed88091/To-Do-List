@@ -1,5 +1,6 @@
 /* eslint max-classes-per-file: "off" */
 import Update from './update.js';
+
 class Task {
   constructor(description, completed, index) {
     this.description = description;
