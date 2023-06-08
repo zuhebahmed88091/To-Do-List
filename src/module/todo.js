@@ -1,5 +1,7 @@
 /* eslint max-classes-per-file: "off" */
-export class Task {
+import Update from './update.js';
+
+class Task {
   constructor(description, completed, index) {
     this.description = description;
     this.completed = completed;
@@ -7,9 +9,13 @@ export class Task {
   }
 }
 
-export default class ToDoList {
+class ToDoList {
   constructor() {
     this.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    this.update = new Update();
+
+    this.updateTaskStatus = this.update.updateTaskStatus.bind(this, this);
+    this.clearCompletedTasks = this.update.clearCompletedTasks.bind(this, this);
   }
 
   addTask(description) {
@@ -43,7 +49,7 @@ export default class ToDoList {
     const todoList = document.getElementById('todo-list');
     todoList.innerHTML = '';
 
-    this.tasks.forEach((task) => {
+    this.tasks.forEach((task, index) => {
       const listItem = document.createElement('div');
       listItem.classList.add('item', 'row');
       const div = document.createElement('div');
@@ -53,7 +59,8 @@ export default class ToDoList {
       const inputItem = document.createElement('input');
       inputItem.classList.add('checkbox');
       inputItem.type = 'checkbox';
-      if (task.checked) {
+      inputItem.checked = task.completed;
+      if (task.completed) {
         listItem.classList.add('completed');
       }
       const itemDescription = document.createElement('input');
@@ -100,6 +107,10 @@ export default class ToDoList {
       div.appendChild(editBtn);
       listItem.appendChild(div);
       todoList.appendChild(listItem);
+
+      inputItem.addEventListener('change', () => {
+        this.updateTaskStatus(index);
+      });
     });
 
     const clearAll = document.createElement('div');
@@ -109,5 +120,11 @@ export default class ToDoList {
     clearBtn.innerText = 'Clear all completed';
     clearAll.appendChild(clearBtn);
     todoList.appendChild(clearAll);
+
+    clearBtn.addEventListener('click', () => {
+      this.clearCompletedTasks();
+    });
   }
 }
+
+export default ToDoList;

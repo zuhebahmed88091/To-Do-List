@@ -155,8 +155,9 @@ You can deploy this project using: GitHub Pages,
 
 - [ ] **Add Backend**
 - [ ] **Add CSS styles**
-- [ ] **Implement add and remove**
-- [ ] **Interactive list**
+- [ ] **Add dragging functionality**
+- [ ] **Add more interactive button**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

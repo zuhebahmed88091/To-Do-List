@@ -77,3 +77,7 @@
   border: none;
   background-color: #f8f9fa;
 }
+
+.completed {
+  text-decoration: line-through;
+}
