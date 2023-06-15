@@ -66,30 +66,47 @@ describe('ToDoList', () => {
 
       // Expectations...
       expect(todoList.tasks[taskIndex].completed).toBe(true);
-      
     });
 
     describe('updateTaskStatus', () => {
       test('should update the "completed" status of a task', () => {
         // Mock the render method
         todoList.render = jest.fn();
-    
+
         // Add a task to the list
         todoList.addTask('Task 1');
         const taskIndex = 0;
-    
+
         // Set the initial completed status to true
         todoList.tasks[taskIndex].completed = true;
-    
+
         // Update the task status
         todoList.updateTaskStatus(taskIndex, false); // Set it to false
-    
+
         // Expectations
         expect(todoList.tasks[taskIndex].completed).toBe(false); // Check that the status is false
         expect(todoList.render).toHaveBeenCalled();
       });
     });
   });
+  describe('clearCompletedTasks', () => {
+    test('should remove all completed tasks from the list', () => {
+      // Mock the render method
+      todoList.render = jest.fn();
 
-  
+      // Add tasks to the list with different completed statuses
+      todoList.addTask('Task 1');
+      todoList.addTask('Task 2');
+      todoList.addTask('Task 3');
+      todoList.updateTaskStatus(0, true); // Mark Task 1 as completed
+      todoList.updateTaskStatus(2, true); // Mark Task 3 as completed
+
+      // Clear completed tasks
+      todoList.clearCompletedTasks();
+
+      // Expectations...
+      expect(todoList.tasks.length).toBe(1);
+      expect(todoList.tasks[0].description).toBe('Task 2');
+    });
+  });
 });

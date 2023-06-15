@@ -2,6 +2,7 @@
 /* eslint class-methods-use-this: "off" */
 class MockElement {
   addEventListener() {}
+
   removeEventListener() {}
   // Add other methods and properties as needed
 }
