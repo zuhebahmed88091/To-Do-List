@@ -68,5 +68,28 @@ describe('ToDoList', () => {
       expect(todoList.tasks[taskIndex].completed).toBe(true);
       
     });
+
+    describe('updateTaskStatus', () => {
+      test('should update the "completed" status of a task', () => {
+        // Mock the render method
+        todoList.render = jest.fn();
+    
+        // Add a task to the list
+        todoList.addTask('Task 1');
+        const taskIndex = 0;
+    
+        // Set the initial completed status to true
+        todoList.tasks[taskIndex].completed = true;
+    
+        // Update the task status
+        todoList.updateTaskStatus(taskIndex, false); // Set it to false
+    
+        // Expectations
+        expect(todoList.tasks[taskIndex].completed).toBe(false); // Check that the status is false
+        expect(todoList.render).toHaveBeenCalled();
+      });
+    });
   });
+
+  
 });
