@@ -52,4 +52,21 @@ describe('ToDoList', () => {
       expect(localStorage.setItem).toHaveBeenCalled();
     });
   });
+  describe('updateTaskStatus', () => {
+    test('should update the "completed" status of a task', () => {
+      // Mock the render method
+      todoList.render = jest.fn();
+
+      // Add a task to the list
+      todoList.addTask('Task 1');
+      const taskIndex = 0;
+
+      // Update the task status
+      todoList.updateTaskStatus(taskIndex, true);
+
+      // Expectations...
+      expect(todoList.tasks[taskIndex].completed).toBe(true);
+      
+    });
+  });
 });
