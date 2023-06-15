@@ -1,6 +1,7 @@
-import ToDoList from '../src/module/todo.js';
-import 'jsdom-global/register';
+/* eslint import/extensions: "off" */
 import localStorageMock from 'jest-localstorage-mock';
+import ToDoList from './module/todo.js';
+import 'jsdom-global/register';
 
 describe('ToDoList', () => {
   let todoList;
@@ -22,7 +23,7 @@ describe('ToDoList', () => {
       expect(localStorage.setItem).toHaveBeenCalled();
     });
   });
-  
+
   describe('deleteTask', () => {
     test('should delete a task from the task list', () => {
       todoList.tasks = [

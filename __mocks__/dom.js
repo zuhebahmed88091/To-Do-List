@@ -1,22 +1,24 @@
+/* eslint max-classes-per-file: "off" */
+/* eslint class-methods-use-this: "off" */
 class MockElement {
-    addEventListener() {}
-    removeEventListener() {}
-    // Add other methods and properties as needed
+  addEventListener() {}
+
+  removeEventListener() {}
+  // Add other methods and properties as needed
+}
+
+class MockDocument {
+  createElement() {
+    return new MockElement();
   }
-  
-  class MockDocument {
-    createElement() {
-      return new MockElement();
-    }
-    // Add other methods and properties as needed
-  }
-  
-  class MockWindow {
+  // Add other methods and properties as needed
+}
+
+class MockWindow {
     document = new MockDocument();
     // Add other methods and properties as needed
-  }
-  
-  const mockWindow = new MockWindow();
-  
-  module.exports = mockWindow;
-  
+}
+
+const mockWindow = new MockWindow();
+
+module.exports = mockWindow;
