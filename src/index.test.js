@@ -22,4 +22,20 @@ describe('ToDoList', () => {
       expect(localStorage.setItem).toHaveBeenCalled();
     });
   });
+  
+  describe('deleteTask', () => {
+    test('should delete a task from the task list', () => {
+      todoList.tasks = [
+        { index: 1, description: 'Task 1' },
+        { index: 2, description: 'Task 2' },
+        { index: 3, description: 'Task 3' },
+      ];
+      const initialTasksCount = todoList.tasks.length;
+      const taskIndex = 1;
+      todoList.deleteTask(taskIndex);
+      expect(todoList.tasks.length).toBe(initialTasksCount - 1);
+      expect(todoList.tasks.findIndex((task) => task.index === taskIndex - 1)).toBe(-1);
+      expect(localStorage.setItem).toHaveBeenCalled();
+    });
+  });
 });
