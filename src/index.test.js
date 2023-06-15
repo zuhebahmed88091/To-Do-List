@@ -39,4 +39,17 @@ describe('ToDoList', () => {
       expect(localStorage.setItem).toHaveBeenCalled();
     });
   });
+  describe('editTask', () => {
+    test('should update the description of a task', () => {
+      // Add a task to the list
+      todoList.addTask('Task 1');
+      const taskIndex = 0;
+      const newDescription = 'Updated Task 1';
+
+      todoList.editTask(taskIndex, newDescription);
+
+      expect(todoList.tasks[taskIndex].description).toBe(newDescription);
+      expect(localStorage.setItem).toHaveBeenCalled();
+    });
+  });
 });
